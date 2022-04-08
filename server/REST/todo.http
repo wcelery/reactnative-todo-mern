@@ -1,0 +1,23 @@
+### Variables
+
+@token={eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiaGVsbEBlbWFpbC5jb20ifSwiaWF0IjoxNjMwMjQ0Nzk3LCJleHAiOjE2MzA2MDQ3OTcsImlzcyI6IndjZWxlcnkiLCJzdWIiOiI2MTJiNDRmZmRjMWM5YzYwZmMzMWNjNGMifQ.7yAepO5wCgJjq9sZpTcLhu6-yxR1USkJss6NjxgwqM8}
+@todo = { "title": "fresh title", "description": "changed description", "year": "2021", "isPublic": "true", "isCompleted": "false"}
+@editedtodo = { "title": "edited title", "description": "some description", "year": "2021", "isPublic": "false", "isCompleted": "false"}
+@badtodo = { "title": "title number two",  "year": "validationtest", "isPublic": "false", "isCompleted": "true"}
+
+### Get list of all todos
+GET  http://localhost:5000/api/todos
+Authorization: {{token}}
+
+### Create or update a todo
+POST  http://localhost:5000/api/todos/6123ba648df0cc6274b30260
+content-type: application/json
+
+{{todo}}
+
+### Delete a todo
+DELETE  http://localhost:5000/api/todos/6123ba648df0cc
+
+
+### Find a todo
+GET  http://localhost:5000/api/todos?search=test&status=completed
